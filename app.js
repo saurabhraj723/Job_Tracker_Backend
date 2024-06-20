@@ -19,7 +19,7 @@ dotenv.config({path:'./config/config.env'});
 
 // establish connection btw frontend and backend
 app.use(cors({
-    origin:'http://localhost:5173',   // the array will contain the info of different frontends that we would like to link
+    origin:[process.env.FRONTEND_URL],   // the array will contain the info of different frontends that we would like to link
     methods:['GET','POST','PUT','DELETE'],
     optionsSuccessStatus: 200,
     credentials: true
